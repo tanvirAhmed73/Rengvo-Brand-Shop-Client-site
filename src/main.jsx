@@ -15,6 +15,7 @@ import Sony from './Components/Brand/Sony';
 import Google from './Components/Brand/Google';
 import Intel from './Components/Brand/Intel';
 import Asus from './Components/Brand/Asus';
+import Details from './Components/DetailsPage/Details';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,14 @@ const router = createBrowserRouter([
     {
       path: '/',
       element : <Home></Home>,
+    },
+
+
+    // details page
+    {
+      path: "/details/:id",
+      element: <Details></Details>,
+      loader: ()=> fetch(`http://localhost:5000/product`),
     },
     // brand
     {
