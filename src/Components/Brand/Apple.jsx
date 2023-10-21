@@ -8,11 +8,19 @@ const Apple = () => {
     const brandname = "apple";
 
     return (
-        <div className="">
-            <h1>{brandname}</h1>
-            {
-                products.map(product => <BrandPageCardMaking key={product._id} brandname={brandname} product={product}></BrandPageCardMaking>)
-            }
+        <div>
+            <div>
+                
+            </div>
+
+            <div className="mt-9 grid grid-cols-1 lg:grid-cols-2 gap-10 ">
+
+
+
+                {
+                    products.map(product => <BrandPageCardMaking key={product._id} brandname={brandname} product={product}></BrandPageCardMaking>)
+                }
+            </div>
         </div>
     );
 };

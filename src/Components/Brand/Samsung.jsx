@@ -1,4 +1,6 @@
-import React from 'react';
+
+import { useLoaderData } from 'react-router-dom';
+import BrandPageCardMaking from './BrandPageCardMaking';
 
 const Samsung = () => {
     const products = useLoaderData();

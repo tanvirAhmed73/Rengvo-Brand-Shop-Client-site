@@ -1,3 +1,5 @@
+import { useLoaderData } from "react-router-dom";
+import BrandPageCardMaking from "./BrandPageCardMaking";
 
 const Sony = () => {
     const products = useLoaderData();
