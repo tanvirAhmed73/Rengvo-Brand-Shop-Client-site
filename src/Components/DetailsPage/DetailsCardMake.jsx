@@ -1,7 +1,12 @@
-import React from 'react';
+
+import { Link } from 'react-router-dom';
+import AddtoCartPage1 from '../AddToCart/AddtoCartPage1';
 
 const DetailsCardMake = ({data}) => {
-    console.log(data)
+    const id = data._id
+
+    
+
     return (
         <div className="w-full">
             <div className=" w-4/5 mx-auto bg-base-100 shadow-xl">
@@ -21,7 +26,11 @@ const DetailsCardMake = ({data}) => {
                     <div className=" badge badge-outline">{data.price}</div>
                     </div>
                 </div>
+                
+              
                 <button className='btn block mx-auto btn-success'>Add to Cart</button>
+                
+                
             </div>
         </div>
     );

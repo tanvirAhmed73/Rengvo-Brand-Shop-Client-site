@@ -4,6 +4,7 @@ const BrandPageCardMaking = ({ product, brandname }) => {
   if (brandname === product.brandName) {
     let id = product._id;
     return (
+      
         <div className="card w-96 bg-base-100 shadow-xl mx-auto justify-center">
         <figure><img src={product.productImage} alt="Shoes" /></figure>
         <div className="card-body">

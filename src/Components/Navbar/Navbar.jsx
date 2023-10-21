@@ -1,6 +1,25 @@
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { BiSolidUserCircle } from 'react-icons/bi';
+
 
 const Navbar = () => {
+
+  const {user, logOut} = useContext(AuthContext);
+
+  const handleLogout = () =>{
+    logOut()
+    .then(() => {
+      // Sign-out successful.
+    }).catch((error) => {
+      // An error happened.
+    });
+  }
+
+
+
   return (
     <div className="navbar bg-green-900">
       <div className="navbar-start">
@@ -52,7 +71,18 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Login</a>
+
+      {
+            user? <>
+                <span className="">{<BiSolidUserCircle></BiSolidUserCircle>}</span>
+                <span className="mr-3">{user.email}</span>
+                <NavLink to={'/home'}><a onClick={handleLogout} className="btn bg-white text-purple-600">Sign out</a></NavLink>
+            </>
+            : <NavLink to={'/login'}><a className="btn bg-white text-purple-600">Login/Registration</a></NavLink>
+          }
+
+
+
       </div>
     </div>
   );
