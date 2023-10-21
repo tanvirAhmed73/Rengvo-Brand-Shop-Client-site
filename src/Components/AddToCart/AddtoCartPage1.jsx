@@ -1,7 +1,7 @@
 
-const AddtoCartPage1 = () => {
+const AddtoCartPage1 = (dataId) => {
     
-
+    console.log(dataId)
 
     return (
         <div>
