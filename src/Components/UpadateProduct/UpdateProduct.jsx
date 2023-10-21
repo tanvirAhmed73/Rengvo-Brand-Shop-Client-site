@@ -1,8 +1,10 @@
-import Swal from 'sweetalert2'
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
+const UpdateProduct = () => {
+  const product = useLoaderData();
 
-const AddProductPage = () => {
-  const handleAddCoffee = (e) => {
+  const handleUpdateproduct = (e) => {
     e.preventDefault();
 
     const form = e.target;
@@ -14,35 +16,49 @@ const AddProductPage = () => {
     const catagory = form.catagory.value;
     const rating = form.rating.value;
 
-    const newProduct = {productName, brandName, productImage, price, description, catagory, rating};
-    
+    const updatedProduct = {
+      productName,
+      brandName,
+      productImage,
+      price,
+      description,
+      catagory,
+      rating,
+    };
+
     // send data to the server
-    fetch('https://brand-store-server-oqpfd1tqh-tanvirs-projects-23a7939e.vercel.app/', {
-      method : "POST",
-      headers : {
-        'content-type' : 'application/json'
+    fetch(`https://brand-store-server-oqpfd1tqh-tanvirs-projects-23a7939e.vercel.app/${product._id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
       },
-      body : JSON.stringify(newProduct)
+      body: JSON.stringify(updatedProduct),
     })
-    .then(res => res.json())
-    .then(data => {
-      if(data.insertedId){
-        Swal.fire({
-          title: 'Success!',
-          text: 'Product added successfully',
-          icon: 'success',
-          confirmButtonText: 'Close'
-        })
-      }
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount>0) {
+          Swal.fire({
+            title: "Success!",
+            text: "Product updated successfully",
+            icon: "success",
+            confirmButtonText: "Close",
+          });
+        }
+      });
   };
 
   return (
     <div className="min-h-screen bg-base-200">
       <div className="mx-auto justify-center">
         <div className=" flex-shrink-0 w-full shadow-2xl bg-base-100">
+          <div className="text-7xl mx-auto justify-center text-center">
+            Update Product
+          </div>
           {/* form */}
-          <form onSubmit={handleAddCoffee} className=" mx-auto justify-between lg:p-11 lg:grid lg:grid-cols-2 gap-7 w-max">
+          <form
+            onSubmit={handleUpdateproduct}
+            className=" mx-auto justify-between lg:p-11 lg:grid lg:grid-cols-2 gap-7 w-max"
+          >
             {/* Product Name */}
             <div className="form-control">
               <label className="label">
@@ -52,6 +68,7 @@ const AddProductPage = () => {
                 type="text"
                 placeholder="Product-Name"
                 name="productName"
+                defaultValue={product.productName}
                 className="input input-bordered"
                 required
               />
@@ -66,6 +83,7 @@ const AddProductPage = () => {
                 type="text"
                 placeholder="Brand-Name"
                 name="brandName"
+                defaultValue={product.brandName}
                 className="input input-bordered"
                 required
               />
@@ -76,7 +94,12 @@ const AddProductPage = () => {
               <label className="label">
                 <span className="label-text">Product Image Url</span>
               </label>
-              <input type="text" name="productImage" required />
+              <input
+                type="text"
+                defaultValue={product.productImage}
+                name="productImage"
+                required
+              />
             </div>
 
             {/* Price */}
@@ -87,6 +110,7 @@ const AddProductPage = () => {
               <input
                 type="text"
                 placeholder="Price"
+                defaultValue={product.price}
                 name="price"
                 className="input input-bordered"
                 required
@@ -101,6 +125,7 @@ const AddProductPage = () => {
               <textarea
                 className="mt-3 p-3"
                 name="description"
+                defaultValue={product.description}
                 rows="1"
                 cols="50"
                 placeholder="Write a Short Description"
@@ -115,6 +140,7 @@ const AddProductPage = () => {
               <input
                 type="text"
                 name="catagory"
+                defaultValue={product.catagory}
                 placeholder="type"
                 className="input input-bordered"
               />
@@ -128,6 +154,7 @@ const AddProductPage = () => {
               <input
                 type="text"
                 name="rating"
+                defaultValue={product.rating}
                 placeholder="Rating"
                 className="input input-bordered"
               />
@@ -144,4 +171,4 @@ const AddProductPage = () => {
   );
 };
 
-export default AddProductPage;
+export default UpdateProduct;

@@ -1,13 +1,9 @@
 
 import Swal from "sweetalert2";
-import AddtoCartPage1 from "../AddToCart/AddtoCartPage1";
 
 const DetailsCardMake = ({ data }) => {
 
-  const handleAddCart = (dataId) => {
-    <AddtoCartPage1 dataId ="dataId" ></AddtoCartPage1>
-    
-  };
+
 
   return (
     <div className="w-full">
@@ -27,7 +23,6 @@ const DetailsCardMake = ({ data }) => {
         </div>
 
         <button
-          onClick={() => handleAddCart(data._id)}
           className="btn block mx-auto btn-success"
         >
           Add to Cart

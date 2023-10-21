@@ -6,4 +6,4 @@
 4) firebase authentication & mongodb used as a database
 5) beautiful design
 
-live link: - 
+live link: - https://brand-shop-60342.web.app/

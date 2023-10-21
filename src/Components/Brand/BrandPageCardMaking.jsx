@@ -23,7 +23,9 @@ const BrandPageCardMaking = ({ product, brandname }) => {
         <Link to={`/details/${id}`}>
           <button className="btn block mx-auto w-full">Details</button>                     
         </Link>
-        <button className="btn mt-4">Update Now!</button>
+        <Link to={`/updateproduct/${id}`}>
+          <button className="btn block mx-auto w-full mt-4">Update Now!</button>
+          </Link>
       </div>
     );
   }
