@@ -3,7 +3,7 @@ import BrandPageCardMaking from "./BrandPageCardMaking";
 
 const Intel = () => {
     const products = useLoaderData();
-
+    
     const brandname = "intel";
 
     return (
@@ -44,15 +44,14 @@ const Intel = () => {
           </div>
     
           {/* card making */}
-          <div className="mt-9 grid grid-cols-1 lg:grid-cols-2 gap-10 ">
-            {products.map((product) => (
-              <BrandPageCardMaking
-                key={product._id}
-                brandname={brandname}
-                product={product}
-              ></BrandPageCardMaking>
-            ))}
+
+          <div className="text-9xl justify-center text-center">
+            NO Product Added Yet!
           </div>
+
+
+
+
         </div>
       );
 };
