@@ -4,6 +4,8 @@ import Swal from "sweetalert2";
 const UpdateProduct = () => {
   const product = useLoaderData();
 
+  const {_id, productName, brandName, productImage, price, description, catagory, rating} =product;
+  
   const handleUpdateproduct = (e) => {
     e.preventDefault();
 
@@ -27,7 +29,7 @@ const UpdateProduct = () => {
     };
 
     // send data to the server
-    fetch(`https://brand-store-server-oqpfd1tqh-tanvirs-projects-23a7939e.vercel.app/${product._id}`, {
+    fetch(`https://brand-store-server-3aeoqr1xz-tanvirs-projects-23a7939e.vercel.app/product/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -36,7 +38,7 @@ const UpdateProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.modifiedCount>0) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
             text: "Product updated successfully",
@@ -52,7 +54,7 @@ const UpdateProduct = () => {
       <div className="mx-auto justify-center">
         <div className=" flex-shrink-0 w-full shadow-2xl bg-base-100">
           <div className="text-7xl mx-auto justify-center text-center">
-            Update Product
+            Update Product : {productName}
           </div>
           {/* form */}
           <form
@@ -68,7 +70,7 @@ const UpdateProduct = () => {
                 type="text"
                 placeholder="Product-Name"
                 name="productName"
-                defaultValue={product.productName}
+                defaultValue={productName}
                 className="input input-bordered"
                 required
               />
@@ -83,7 +85,7 @@ const UpdateProduct = () => {
                 type="text"
                 placeholder="Brand-Name"
                 name="brandName"
-                defaultValue={product.brandName}
+                defaultValue={brandName}
                 className="input input-bordered"
                 required
               />
@@ -96,7 +98,7 @@ const UpdateProduct = () => {
               </label>
               <input
                 type="text"
-                defaultValue={product.productImage}
+                defaultValue={productImage}
                 name="productImage"
                 required
               />
@@ -110,7 +112,7 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 placeholder="Price"
-                defaultValue={product.price}
+                defaultValue={price}
                 name="price"
                 className="input input-bordered"
                 required
@@ -125,7 +127,7 @@ const UpdateProduct = () => {
               <textarea
                 className="mt-3 p-3"
                 name="description"
-                defaultValue={product.description}
+                defaultValue={description}
                 rows="1"
                 cols="50"
                 placeholder="Write a Short Description"
@@ -140,7 +142,7 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 name="catagory"
-                defaultValue={product.catagory}
+                defaultValue={catagory}
                 placeholder="type"
                 className="input input-bordered"
               />
@@ -154,7 +156,7 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 name="rating"
-                defaultValue={product.rating}
+                defaultValue={rating}
                 placeholder="Rating"
                 className="input input-bordered"
               />
@@ -162,7 +164,7 @@ const UpdateProduct = () => {
 
             {/* Add Product */}
             <div className="form-control lg:mt-9">
-              <button className="btn btn-primary">Add Product</button>
+              <button className="btn btn-primary">Update Product</button>
             </div>
           </form>
         </div>

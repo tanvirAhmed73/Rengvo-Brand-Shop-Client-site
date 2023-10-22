@@ -66,7 +66,7 @@ const Navbar = () => {
             <Link to="/addProduct">Add Product</Link>
           </li>
           <li>
-            <Link to="/mycart">My Cart</Link>
+            <Link to="/addcart">My Cart</Link>
           </li>
         </ul>
       </div>

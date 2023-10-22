@@ -1,5 +1,4 @@
-import Swal from 'sweetalert2'
-
+import Swal from "sweetalert2";
 
 const AddProductPage = () => {
   const handleAddCoffee = (e) => {
@@ -11,30 +10,41 @@ const AddProductPage = () => {
     const productImage = form.productImage.value;
     const price = form.price.value;
     const description = form.description.value;
-    const catagory = form.catagory.value;
+    const category = form.catagory.value;
     const rating = form.rating.value;
 
-    const newProduct = {productName, brandName, productImage, price, description, catagory, rating};
-    
+    const newProduct = {
+      productName,
+      brandName,
+      productImage,
+      price,
+      description,
+      category,
+      rating,
+    };
+
     // send data to the server
-    fetch('https://brand-store-server-oqpfd1tqh-tanvirs-projects-23a7939e.vercel.app/', {
-      method : "POST",
-      headers : {
-        'content-type' : 'application/json'
-      },
-      body : JSON.stringify(newProduct)
-    })
-    .then(res => res.json())
-    .then(data => {
-      if(data.insertedId){
-        Swal.fire({
-          title: 'Success!',
-          text: 'Product added successfully',
-          icon: 'success',
-          confirmButtonText: 'Close'
-        })
+    fetch(
+      "https://brand-store-server-3aeoqr1xz-tanvirs-projects-23a7939e.vercel.app/product",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
       }
-    })
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Product added successfully",
+            icon: "success",
+            confirmButtonText: "Close",
+          });
+        }
+      });
   };
 
   return (
@@ -42,7 +52,10 @@ const AddProductPage = () => {
       <div className="mx-auto justify-center">
         <div className=" flex-shrink-0 w-full shadow-2xl bg-base-100">
           {/* form */}
-          <form onSubmit={handleAddCoffee} className=" mx-auto justify-between lg:p-11 lg:grid lg:grid-cols-2 gap-7 w-max">
+          <form
+            onSubmit={handleAddCoffee}
+            className=" mx-auto justify-between lg:p-11 lg:grid lg:grid-cols-2 gap-7 w-max"
+          >
             {/* Product Name */}
             <div className="form-control">
               <label className="label">

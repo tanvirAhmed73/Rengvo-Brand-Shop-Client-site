@@ -22,6 +22,7 @@ import Register from './Components/Login&Register/Register';
 import AuthProvider from '../Provider/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import UpdateProduct from './Components/UpadateProduct/UpdateProduct';
+import AddToCart1 from './Components/AddToCart/AddToCart1';
 
 const router = createBrowserRouter([
   {
@@ -57,7 +58,13 @@ const router = createBrowserRouter([
     {
       path: "/details/:id",
       element: <PrivateRoute><Details></Details></PrivateRoute> ,
-      loader: ()=> fetch(`https://brand-store-server-oqpfd1tqh-tanvirs-projects-23a7939e.vercel.app/`),
+      loader: ()=> fetch(`https://brand-store-server-3aeoqr1xz-tanvirs-projects-23a7939e.vercel.app/product`),
+    },
+
+    {
+      path: "/addcart",
+      element: <AddToCart1></AddToCart1> ,
+      loader: ()=> fetch(`https://brand-store-server-3aeoqr1xz-tanvirs-projects-23a7939e.vercel.app/product`),
     },
     
     
@@ -65,43 +72,43 @@ const router = createBrowserRouter([
     {
       path: '/apple',
       element :  <Apple></Apple>,
-      loader: ()=> fetch("https://brand-store-server-oqpfd1tqh-tanvirs-projects-23a7939e.vercel.app/"),
+      loader: ()=> fetch("https://brand-store-server-3aeoqr1xz-tanvirs-projects-23a7939e.vercel.app/product"),
       
     },
     {
       path: '/samsung',
       element :  <Samsung></Samsung>,
-      loader: ()=> fetch("https://brand-store-server-oqpfd1tqh-tanvirs-projects-23a7939e.vercel.app/"),
+      loader: ()=> fetch("https://brand-store-server-3aeoqr1xz-tanvirs-projects-23a7939e.vercel.app/product"),
       
     },
     {
       path: '/sony',
       element :  <Sony></Sony>,
-      loader: ()=> fetch("https://brand-store-server-oqpfd1tqh-tanvirs-projects-23a7939e.vercel.app/"),
+      loader: ()=> fetch("https://brand-store-server-3aeoqr1xz-tanvirs-projects-23a7939e.vercel.app/product"),
       
     },
     {
       path: '/google',
       element :  <Google></Google>,
-      loader: ()=> fetch("https://brand-store-server-oqpfd1tqh-tanvirs-projects-23a7939e.vercel.app/"),
+      loader: ()=> fetch("https://brand-store-server-3aeoqr1xz-tanvirs-projects-23a7939e.vercel.app/product"),
       
     },
     {
       path: '/intel',
       element :  <Intel></Intel>,
-      loader: ()=> fetch("https://brand-store-server-oqpfd1tqh-tanvirs-projects-23a7939e.vercel.app/"),
+      loader: ()=> fetch("https://brand-store-server-3aeoqr1xz-tanvirs-projects-23a7939e.vercel.app/product"),
       
     },
     {
       path: '/asus',
       element :  <Asus></Asus>,
-      loader: ()=> fetch("https://brand-store-server-oqpfd1tqh-tanvirs-projects-23a7939e.vercel.app/"),
+      loader: ()=> fetch("https://brand-store-server-3aeoqr1xz-tanvirs-projects-23a7939e.vercel.app/product"),
       
     },
     {
       path: '/updateproduct/:id',
       element :  <UpdateProduct></UpdateProduct>,
-      loader: ({params})=> fetch(`https://brand-store-server-oqpfd1tqh-tanvirs-projects-23a7939e.vercel.app//${params.id}`),
+      loader: ({params})=> fetch(`https://brand-store-server-3aeoqr1xz-tanvirs-projects-23a7939e.vercel.app/product/${params.id}`),
       
     },
     
