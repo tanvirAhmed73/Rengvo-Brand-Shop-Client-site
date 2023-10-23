@@ -32,7 +32,7 @@ const DetailsCardMake = ({ data }) => {
 
     // send data to the server
     fetch(
-      "http://localhost:5000/addcart",
+      "https://brand-store-server-l1y6spdbz-tanvirs-projects-23a7939e.vercel.app/addcart",
       {
         method: "POST",
         headers: {

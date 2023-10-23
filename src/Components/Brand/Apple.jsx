@@ -52,7 +52,8 @@ const Apple = () => {
         </div>
       </div>
 
-      {appleCard.length > 0 ? (
+      {
+      appleCard.length > 0 ? (
         <div className="mt-9 grid grid-cols-1 lg:grid-cols-2 gap-10 ">
           {products.map((product) => (
             <BrandPageCardMaking
@@ -70,7 +71,11 @@ const Apple = () => {
             alt=""
           />
         </div>
-      )}
+      )
+      }
+
+
+
     </div>
   );
 };

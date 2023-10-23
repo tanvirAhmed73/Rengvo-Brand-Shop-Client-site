@@ -58,13 +58,13 @@ const router = createBrowserRouter([
     {
       path: "/details/:id",
       element: <PrivateRoute><Details></Details></PrivateRoute> ,
-      loader: ()=> fetch(`http://localhost:5000/product`),
+      loader: ()=> fetch(`https://brand-store-server-l1y6spdbz-tanvirs-projects-23a7939e.vercel.app/product`),
     },
     
     {
       path: "/addcart",
       element: <PrivateRoute><AddToCart1></AddToCart1></PrivateRoute> ,
-      loader: ()=> fetch(`http://localhost:5000/product`),
+      loader: ()=> fetch(`https://brand-store-server-l1y6spdbz-tanvirs-projects-23a7939e.vercel.app/product`),
     },
     
     
@@ -72,43 +72,43 @@ const router = createBrowserRouter([
     {
       path: '/apple',
       element :  <Apple></Apple>,
-      loader: ()=> fetch("http://localhost:5000/product"),
+      loader: ()=> fetch("https://brand-store-server-l1y6spdbz-tanvirs-projects-23a7939e.vercel.app/product"),
       
     },
     {
       path: '/samsung',
       element :  <Samsung></Samsung>,
-      loader: ()=> fetch("http://localhost:5000/product"),
+      loader: ()=> fetch("https://brand-store-server-l1y6spdbz-tanvirs-projects-23a7939e.vercel.app/product"),
       
     },
     {
       path: '/sony',
       element :  <Sony></Sony>,
-      loader: ()=> fetch("http://localhost:5000/product"),
+      loader: ()=> fetch("https://brand-store-server-l1y6spdbz-tanvirs-projects-23a7939e.vercel.app/product"),
       
     },
     {
       path: '/google',
       element :  <Google></Google>,
-      loader: ()=> fetch("http://localhost:5000/product"),
+      loader: ()=> fetch("https://brand-store-server-l1y6spdbz-tanvirs-projects-23a7939e.vercel.app/product"),
       
     },
     {
       path: '/intel',
       element :  <Intel></Intel>,
-      loader: ()=> fetch("http://localhost:5000/product"),
+      loader: ()=> fetch("https://brand-store-server-l1y6spdbz-tanvirs-projects-23a7939e.vercel.app/product"),
       
     },
     {
       path: '/asus',
       element :  <Asus></Asus>,
-      loader: ()=> fetch("http://localhost:5000/product"),
+      loader: ()=> fetch("https://brand-store-server-l1y6spdbz-tanvirs-projects-23a7939e.vercel.app/product"),
       
     },
     {
       path: '/updateproduct/:id',
       element :  <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute> ,
-      loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`),
+      loader: ({params})=> fetch(`https://brand-store-server-l1y6spdbz-tanvirs-projects-23a7939e.vercel.app/product/${params.id}`),
       
     },
     
