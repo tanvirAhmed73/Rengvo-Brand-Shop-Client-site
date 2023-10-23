@@ -1,8 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 import BrandPageCardMaking from "./BrandPageCardMaking";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Asus = () => {
   const products = useLoaderData();
+
+  const [asusCard, setasusCard] = useState([])
+
+    useEffect(()=>{
+      const asusCard = products.filter(entry => entry.brandName === "asus");
+      setasusCard(asusCard);
+    },[products])
 
   const brandname = "asus";
 
@@ -44,15 +53,28 @@ const Asus = () => {
       </div>
 
       {/* card making */}
-      <div className="mt-9 grid grid-cols-1 lg:grid-cols-2 gap-10 ">
-        {products.map((product) => (
-          <BrandPageCardMaking
-            key={product._id}
-            brandname={brandname}
-            product={product}
-          ></BrandPageCardMaking>
-        ))}
-      </div>
+      {
+      asusCard.length > 0 ? (
+        <div className="mt-9 grid grid-cols-1 lg:grid-cols-2 gap-10 ">
+          {products.map((product) => (
+            <BrandPageCardMaking
+              key={product._id}
+              brandname={brandname}
+              product={product}
+            ></BrandPageCardMaking>
+          ))}
+        </div>
+      ) : (
+        <div>
+          <img
+            className="w-full h-screen"
+            src="https://evgracias.com/images/no-products.jpg"
+            alt=""
+          />
+        </div>
+      )
+      }
+
     </div>
   );
 };

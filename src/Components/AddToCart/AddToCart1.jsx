@@ -12,11 +12,6 @@ const AddToCart1 = () => {
       const withCart = product.filter(entry => entry.addCart);
       setwithAddToCart(withCart);
     },[product])
-
-    // const addToCart ="addCart"
-
-    // const {_id, productName, brandName, productImage, price, description, catagory, rating, addCart} =product;
-    // console.log(withAddToCart);
     return (
         // making add to cart card
         <div className="mt-9 grid grid-cols-1 lg:grid-cols-2 gap-10 ">

@@ -55,7 +55,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">Rengvo</a>
+        <a className="btn btn-ghost normal-case text-sm lg:text-xl">Rengvo</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -75,7 +75,7 @@ const Navbar = () => {
       {
             user? <>
                 <span className="">{<BiSolidUserCircle></BiSolidUserCircle>}</span>
-                <span className="mr-3">{user.email}</span>
+                <span className="mr-3 text-sm">{user.email}</span>
                 <NavLink to={'/home'}><a onClick={handleLogout} className="btn bg-white text-purple-600">Sign out</a></NavLink>
             </>
             : <NavLink to={'/login'}><a className="btn bg-white text-purple-600">Login/Registration</a></NavLink>
