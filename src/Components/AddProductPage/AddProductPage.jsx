@@ -25,7 +25,7 @@ const AddProductPage = () => {
 
     // send data to the server
     fetch(
-      "https://brand-store-server-3aeoqr1xz-tanvirs-projects-23a7939e.vercel.app/product",
+      "http://localhost:5000/product",
       {
         method: "POST",
         headers: {

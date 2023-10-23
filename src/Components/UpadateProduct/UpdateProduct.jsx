@@ -29,7 +29,7 @@ const UpdateProduct = () => {
     };
 
     // send data to the server
-    fetch(`https://brand-store-server-3aeoqr1xz-tanvirs-projects-23a7939e.vercel.app/product/${_id}`, {
+    fetch(`http://localhost:5000/product/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

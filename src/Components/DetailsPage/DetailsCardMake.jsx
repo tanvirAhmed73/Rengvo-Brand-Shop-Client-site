@@ -1,7 +1,61 @@
 
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const DetailsCardMake = ({ data }) => {
+  const {_id, productName, brandName, productImage, price, description, catagory, rating} =data;
+  let id = data._id;
+
+  const handleAddtoCart = ()=>{
+    const productName = data.productName;
+
+    const brandName = data.brandName;
+    const productImage = data.productImage;
+    const price = data.price;
+    const description = data.description;
+    const catagory = data.catagory;
+    const rating = data.rating;
+    const addCart = "addToCart";
+
+    
+    const addToCart = {
+      productName,
+      brandName,
+      productImage,
+      price,
+      description,
+      catagory,
+      rating,
+      addCart,
+    };
+    console.log(addToCart);
+
+    // send data to the server
+    fetch(
+      "http://localhost:5000/addcart",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(addToCart),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Added To the cart successfully",
+            icon: "success",
+            confirmButtonText: "Close",
+          });
+        }
+      });
+
+
+  
+  }
 
 
 
@@ -22,11 +76,10 @@ const DetailsCardMake = ({ data }) => {
           </div>
         </div>
 
-        <button
-          className="btn block mx-auto btn-success"
-        >
-          Add to Cart
-        </button>
+        
+        <button onClick={handleAddtoCart} className="btn block mx-auto btn-success">Add to Cart</button>                     
+        
+
       </div>
     </div>
   );
