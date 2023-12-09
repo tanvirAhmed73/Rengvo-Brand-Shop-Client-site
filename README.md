@@ -1,10 +1,16 @@
-<h1>Technology and Electronics Shop</h1>
+# This is the Technology and Electronics Shop website
 
-1) Responsive Website
-2) Have A login and registration page
-3) Have a Cart page
-4) firebase authentication & mongodb used as a database
-5) beautiful design
+Live site Link: https://charming-mousse-9b5dbc.netlify.app/
 
-live link: - https://brand-shop-60342.web.app/
+- This website is responsive website
+- this website is both client side and serverside
+- Have a Cart page
+- This website used reactjs, tailwind,expressjs,MongoDB, vercel
+- this website uses google login and email password login
+- this website used Firebase authentication
+- this website react-router
+- this website used the react icon
+- a login user can add new technology if he/she wants to
+
+
 
