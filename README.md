@@ -1,6 +1,6 @@
 # This is the Technology and Electronics Shop website
 
-Live site Link: https://charming-mousse-9b5dbc.netlify.app/
+Live site Link: https://brand-tech-shop.netlify.app/
 
 - This website is responsive website
 - this website is both client side and serverside
